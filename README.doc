@@ -1,0 +1,104 @@
+Github
+
+
+
+To ignore the .env file
+
+Create .gitignore
+
+Add .env 
+Then push .gitignore to github
+
+
+To merge code bug-fix in master branch 
+
+>Go to master
+
+>git merge bug-fix
+
+//Suppose merge conflits occur  and i dont want conflicts now
+
+
+In master branch (- -abort) double dash andi aa kathi
+>git merge –abort
+
+
+
+
+Create a branch
+
+>git checkout -b develop
+
+
+Rename a branch
+>git branch -m buggfix bugfix
+
+
+Delete a branch
+
+>git branch -d bugfix
+
+//while deleting we should be in another branch eg.master
+
+
+
+Switch to branch
+
+>git switch main
+
+
+List all branch
+
+>git branch
+
+
+
+
+Merge and Rebase
+
+//both are used to merge the branch
+
+Merge: In merge there will be a new commit “Merging common” in the commit history.
+
+REbase: It takes all the commit of a branch and append then to the commit of a new branch.
+
+Git Merge Example
+Switch to the main branch:
+
+git checkout main
+
+
+Merge feature-branch into main:
+
+git merge feature-branch
+This creates a merge commit that includes changes from both main and feature-branch.
+Git Rebase Example
+Switch to the feature-branch:
+
+git checkout feature-branch
+
+
+Rebase feature-branch onto main:
+
+git rebase main
+This rewrites the history of feature-branch so that it appears as if you made your changes on top of the latest commit from main.
+Visualization
+Before Rebase:
+
+main:          A---B---C
+                 \
+feature-branch:   D---E---F
+
+After Merge:
+main:          A---B---C-----G
+                 \       /
+feature-branch:   D---E---F
+
+After Rebase:
+main:          A---B---C
+                        \
+feature-branch:          D'---E'---F'
+
+Merge: Both histories are preserved, and a new commit (G) is created to combine them.
+Rebase: The commits from feature-branch are replayed on top of main, creating a linear history.
+
